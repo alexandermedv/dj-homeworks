@@ -69,3 +69,10 @@ python manage.py loaddata school.json
 ```bash
 python manage.py runserver
 ```
+Ручные действия:
+INSERT INTO public.school_student_teacher
+VALUES (1, 1, 1);
+INSERT INTO public.school_student_teacher
+VALUES (2, 2, 3);
+INSERT INTO public.school_student_teacher
+VALUES (3, 3, 3);
