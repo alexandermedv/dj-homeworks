@@ -10,6 +10,8 @@ def show_catalog(request):
     template = 'catalog.html'
     phones1 = list(Phone.objects.values())
     sorting = request.GET.get('sort')
+    if not sorting:
+        sorting = 'name'
     print(sorting)
     if sorting == 'name':
         phones = sorted(phones1, key=lambda d: d['name'])
@@ -23,7 +25,11 @@ def show_catalog(request):
 
 def show_product(request, slug):
     template = 'product.html'
-    phone = Phone.objects.get(slug=slug)
+    try:
+        phone = Phone.objects.get(slug=slug)
+    except:
+        raise Http404("Error")
+    # phone = Phone.objects.get(slug=slug)
     print(phone)
     context = {'phone': phone}
     return render(request, template, context)

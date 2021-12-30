@@ -16,6 +16,7 @@ class Command(BaseCommand):
         for phone in phones:
             # TODO: Добавьте сохранение модели
             print(phone)
-            p = Phone(id=phone['id'], name=phone['name'], price=phone['price'], image=phone['image'], release_date=phone['release_date'], lte_exists=phone['lte_exists'], slug = slugify(phone['name']))
-            p.save()
+            # p = Phone(id=phone['id'], name=phone['name'], price=phone['price'], image=phone['image'], release_date=phone['release_date'], lte_exists=phone['lte_exists'], slug = slugify(phone['name']))
+            # p.save()
+            p = Phone.objects.create(id=phone['id'], name=phone['name'], price=phone['price'], image=phone['image'], release_date=phone['release_date'], lte_exists=phone['lte_exists'], slug=slugify(phone['name']))
             pass

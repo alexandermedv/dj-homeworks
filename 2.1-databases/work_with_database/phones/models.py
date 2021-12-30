@@ -4,11 +4,11 @@ from django.template.defaultfilters import slugify
 
 class Phone(models.Model):
     # TODO: Добавьте требуемые поля
-    id = models.TextField(primary_key=True)
-    name = models.TextField()
-    price = models.TextField()
-    image = models.TextField()
-    release_date = models.TextField()
-    lte_exists = models.TextField()
-    slug = models.TextField()
+    id = models.IntegerField(primary_key=True)
+    name = models.SlugField(max_length=50)
+    price = models.FloatField()
+    image = models.ImageField()
+    release_date = models.DateField()
+    lte_exists = models.BooleanField()
+    slug = models.SlugField()
     pass
