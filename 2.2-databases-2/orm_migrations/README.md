@@ -70,9 +70,27 @@ python manage.py loaddata school.json
 python manage.py runserver
 ```
 Ручные действия:
-INSERT INTO public.school_student_teacher
+
+DELETE FROM public.school_teacher;
+DELETE FROM public.school_student;
+DELETE FROM public.school_student_teachers;
+
+INSERT INTO public.school_teacher
+VALUES (1, 'Карякин Владимир Владимирович', 'Математика');
+INSERT INTO public.school_teacher
+VALUES (2, 'Наумкин Анатолий Андреевич', 'Рус яз');
+INSERT INTO public.school_teacher
+VALUES (3, 'Филатова Елена Александровна', 'Физика');
+INSERT INTO public.school_student
+VALUES (1, 'Бабаева Вера Ивановна', '8А');
+INSERT INTO public.school_student
+VALUES (2, 'Погорелов Денис Витальевич', '8А');
+INSERT INTO public.school_student
+VALUES (3, 'Осипов Иван Вячеславович', '8Б');
+
+INSERT INTO public.school_student_teachers
 VALUES (1, 1, 1);
-INSERT INTO public.school_student_teacher
+INSERT INTO public.school_student_teachers
 VALUES (2, 2, 3);
-INSERT INTO public.school_student_teacher
+INSERT INTO public.school_student_teachers
 VALUES (3, 3, 3);
