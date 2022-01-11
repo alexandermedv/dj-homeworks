@@ -30,5 +30,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/v1/projects/', include(router_project.urls)),
     path('api/v1/measures/', include(router_measure.urls))
-    # path('api/v1/objects', views.ProjectViewSet)
 ]
