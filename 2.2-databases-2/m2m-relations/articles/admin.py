@@ -25,7 +25,7 @@ class RelationshipInlineFormset(BaseInlineFormSet):
                     kol += 1
 
         if kol != 1:
-            raise ValidationError('Не выполнена валидация формы. Возможен только один и только один основной тэг.')
+            raise ValidationError('Не выполнена валидация формы. Возможен один и только один основной тэг.')
         return super().clean()  # вызываем базовый код переопределяемого метода
 
 
